@@ -41,6 +41,7 @@ This software requires the Ximea Linux Software Package.  See http://www.ximea.c
 
 # 3) Basic Usage
 
+The following description is no longer valid for ximea PCIe cameras!
 This software provides ROS drivers for the ximea xiQ USB 3.0 Cameras.  This driver supports image acquisition from an arbitrary number of cameras, so long as there is sufficient bandwidth on the USB 3.0 bus to perform the data transfer. In order to operate the cameras, the serial numbers of the devices must be known.
 
 1) create a configuration file for each camera.  The configuration file should be kept in the `/config` folder.  A configuration file will look as follows:
