@@ -55,10 +55,13 @@ ximea_ros_cluster::ximea_ros_cluster(int num_cams) : USB_BUS_SAFETY_MARGIN(0), U
 ximea_ros_cluster::ximea_ros_cluster(std::vector<std::string> filenames) : USB_BUS_SAFETY_MARGIN(0), USB3_BANDWIDTH(2400)
 {
   devices_open_ = false;
+
   for (int i = 0 ; i < filenames.size(); i ++)
   {
+      //TODO: get the name of a camera so that it is put as the node
     std::string cam_name = getCamNameFromYaml(filenames[i]);
     ros::NodeHandle nh(std::string("/") + cam_name);
+    //TODO: reimplement this function "add_camera" and the construction for ximea_ros_driver
     add_camera(ximea_ros_driver(nh, filenames[i]));
   }
 

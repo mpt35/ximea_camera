@@ -32,6 +32,7 @@ All rights reserved.
 class ximea_driver
 {
 public:
+    explicit ximea_driver();
   explicit ximea_driver(int serial_no = 0 , std::string cam_name = "");  // if no serial no is specified select the first cam on the bus
   explicit ximea_driver(std::string file_name);
 

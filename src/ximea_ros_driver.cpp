@@ -100,11 +100,19 @@ void ximea_ros_driver::setImageDataFormat(std::string image_format)
     bpp_ = 3;
   }
 
+    /*
   else if (image_format == std::string("XI_RGB32"))
   {
     image_data_format = XI_RGB32;
     encoding_ = std::string("bgr16");
     bpp_ = 3;
+  }
+    */
+  else if (image_format == std::string("XI_RGB32"))
+  {
+      image_data_format = XI_RGB32;
+      encoding_ = std::string("bgra8");
+      bpp_ = 4;
   }
 
   else if (image_format == std::string("XI_RGB_PLANAR"))

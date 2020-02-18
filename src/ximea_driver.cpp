@@ -16,6 +16,14 @@ All rights reserved.
 #include <sstream>
 #include <string>
 
+
+ximea_driver::ximea_driver()
+{
+    //serial_no_ = serial_no;
+    //cam_name_ = cam_name;
+    assignDefaultValues();
+}
+
 ximea_driver::ximea_driver(int serial_no, std::string cam_name)
 {
   serial_no_ = serial_no;
@@ -87,7 +95,11 @@ void ximea_driver::openDevice()
   {
     stat = xiOpenDevice(0, &xiH_);
     errorHandling(stat, "Open Device");
-  }
+  } else if (serial_no_ == 1)
+    {
+        stat = xiOpenDevice(1, &xiH_);
+        errorHandling(stat, "Open Device");
+    }
   else
   {
     std::stringstream conv;
