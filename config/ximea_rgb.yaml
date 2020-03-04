@@ -1,9 +1,9 @@
 serial_no: 0
 cam_name: "cam0"
 yaml_url: "package://mcptam/calibrations/camera1.yaml"
-exposure_time: 30000
-rect_left: 1
-rect_top: 1
-rect_height: 4096
-rect_width: 3072
+exposure_time: 50000
+rect_left: 0
+rect_top: 0
+rect_width: 4096
+rect_height: 3072
 image_data_format: "XI_RGB24"

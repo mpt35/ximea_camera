@@ -218,19 +218,19 @@ void ximea_driver::setROI(int l, int t, int w, int h)
   else rect_left_ = l;
   if (t < 0 || t > 1024) rect_top_ = 0;
   else rect_top_ = t;
-  if (w < 0 || w > 1280) rect_width_ = 1280;
+  if (w < 0 || w > 4096) rect_width_ = 4096;
   else rect_width_ = w;
-  if (h < 0 || h > 1024) rect_height_ = 1024;
+  if (h < 0 || h > 3072) rect_height_ = 3072;
   else rect_height_ = h;
-  if (l + w > 1280)
+  if (l + w > 4096)
   {
     rect_left_ =  0;
-    rect_width_ = 1280;
+    rect_width_ = 4096;
   }
-  if (h + t > 1024)
+  if (h + t > 3072)
   {
     rect_top_ =  0;
-    rect_height_ = 1024;
+    rect_height_ = 3072;
   }
 
   std::cout << rect_height_ << " " << rect_width_ << " " << rect_left_ << " " << rect_top_ << std::endl;
@@ -335,54 +335,59 @@ int ximea_driver::readParamsFromFile(std::string file_name)
     cam_name_ =  doc["cam_name"].as<std::string>();
   }
   catch (std::runtime_error) {}
+  /*
   try
   {
     frame_id_ =  doc["frame_id"].as<std::string>();
   }
   catch (std::runtime_error) {}
-
+  */
   try
   {
     yaml_url_ = doc["yaml_url"].as<std::string>();
   }
   catch (std::runtime_error) {}
-
+/*
   try
   {
     cams_on_bus_ = doc["cams_on_bus"].as<int>();
   }
   catch (std::runtime_error) {}
-
+*/
+/*
   try
   {
     bandwidth_safety_margin_ = doc["bandwidth_safety_margin"].as<int>();
   }
   catch (std::runtime_error) {}
-
+    */
+/*
   try
   {
     frame_rate_ = doc["frame_rate"].as<int>();
   }
   catch (std::runtime_error) {}
-
+*/
   try
   {
     exposure_time_ = doc["exposure_time"].as<int>();
   }
   catch (std::runtime_error) {}
-
+/*
   try
   {
     auto_exposure_ = doc["auto_exposure"].as<int>();
   }
   catch (std::runtime_error) {}
-
+*/
+/*
   try
   {
     auto_exposure_limit_ = doc["auto_exposure_limit"].as<int>();
   }
   catch (std::runtime_error) {}
-
+    */
+/*
   try
   {
     auto_gain_limit_ = doc["auto_gain_limit"].as<int>();
@@ -406,7 +411,7 @@ int ximea_driver::readParamsFromFile(std::string file_name)
     downsample_factor_ = doc["downsample_factor_"].as<int>();
   }
   catch (std::runtime_error) {}
-
+*/
   try
   {
     rect_left_ = doc["rect_left"].as<int>();
